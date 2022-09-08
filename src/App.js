@@ -1,12 +1,15 @@
-import { useState } from "react";
-import Checkbox from "./components/Checkbox.tsx";
+import SelectionBlock from "./components/SelectionBlock.tsx";
 import "./App.css";
 
 const App = () => {
-  const [state, setState] = useState(true);
   return (
     <div className="App">
-      <Checkbox onChange={setState} checked={state}>Toggle</Checkbox>
+      <SelectionBlock options={
+        ["Intra-Clan Leaderboard",
+          "Clan War Tiered Leaderboard",
+          "World Domination",
+          "Clan War Tiered Leaderboard"]
+      } />
     </div>
   );
 }
