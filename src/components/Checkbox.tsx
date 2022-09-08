@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 const StyleWrapper = styled.div`
@@ -23,13 +24,19 @@ const StyleOff = styled.div`
   background-size: 20px 20px;
 `
 
-const Checkbox = ({ onChange, checked, children }) => {
-  return (
-    <StyleWrapper onClick={() => onChange(!checked)}>
-      {checked ? <StyleOn /> : <StyleOff />}
-      {children}
-    </StyleWrapper>
-  );
+const Checkbox = ({
+  checked,
+  children,
+  onChange,
+}: {
+  onChange: any;
+  checked: boolean;
+  children: React.ReactNode
+}) => {
+  return <StyleWrapper onClick={() => onChange(!checked)}>
+    {checked ? <StyleOn /> : <StyleOff />}
+    {children}
+  </StyleWrapper>;
 };
 
 export default Checkbox;
